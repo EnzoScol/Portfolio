@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT.dll</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <div class="noise-overlay"></div>
+    <div class="scanlines"></div>
+    <div class="grid-overlay"></div>
+    
+    <header class="header">
+        <nav class="nav">
+            <div class="logo glitch" data-text="WEBCORE_2024">WEBCORE_2024</div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME.exe</a></li>
+                <li><a href="projects.html">PROJECTS.sys</a></li>
+                <li><a href="about.html">ABOUT.txt</a></li>
+                <li><a href="contact.html" class="active">CONTACT.dll</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-page">
+        <div class="contact-container glitch-container">
+            <h2 class="section-title glitch-text" data-text="CONTACT_INTERFACE">CONTACT_INTERFACE</h2>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <div class="input-container">
+                        <span class="input-prefix"><i class="fas fa-user"></i></span>
+                        <input type="text" id="name" name="name" class="glitch-input" placeholder="ENTER_USERNAME" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-container">
+                        <span class="input-prefix"><i class="fas fa-envelope"></i></span>
+                        <input type="email" id="email" name="email" class="glitch-input" placeholder="ENTER_EMAIL" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-container">
+                        <span class="input-prefix"><i class="fas fa-tag"></i></span>
+                        <select id="subject" name="subject" class="glitch-input" required>
+                            <option value="">SELECT_SUBJECT</option>
+                            <option value="collaboration">COLLABORATION.req</option>
+                            <option value="project">PROJECT.sys</option>
+                            <option value="question">QUESTION.txt</option>
+                            <option value="other">OTHER.tmp</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-container">
+                        <span class="input-prefix"><i class="fas fa-message"></i></span>
+                        <textarea id="message" name="message" class="glitch-input" placeholder="ENTER_MESSAGE" required></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-glitch">
+                    <span class="btn-content">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>SEND_MESSAGE</span>
+                    </span>
+                </button>
+            </form>
+
+            <div class="social-links">
+                <h3 class="glitch-text" data-text="CONNECT_WITH_ME">CONNECT_WITH_ME</h3>
+                <div class="social-icons">
+                    <a href="https://github.com/votre-github" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                        <span>GITHUB.exe</span>
+                    </a>
+                    <a href="https://linkedin.com/in/votre-linkedin" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LINKEDIN.sys</span>
+                    </a>
+                    <a href="https://twitter.com/votre-twitter" target="_blank" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                        <span>TWITTER.dll</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/cursor.js"></script>
+    <script src="assets/js/matrix.js"></script>
+    <script src="assets/js/glitch.js"></script>
+    <script src="assets/js/background3d.js"></script>
+</body>
+</html> 

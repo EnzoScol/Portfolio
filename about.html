@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT.txt</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <div class="noise-overlay"></div>
+    <div class="scanlines"></div>
+    <div class="grid-overlay"></div>
+    
+    <header class="header">
+        <nav class="nav">
+            <div class="logo glitch" data-text="WEBCORE_2024">WEBCORE_2024</div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME.exe</a></li>
+                <li><a href="projects.html">PROJECTS.sys</a></li>
+                <li><a href="about.html" class="active">ABOUT.txt</a></li>
+                <li><a href="contact.html">CONTACT.dll</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="about-page">
+        <div class="matrix-rain"></div>
+        
+        <div class="about-container">
+            <nav class="side-nav">
+                <div class="nav-indicator"></div>
+                <ul>
+                    <li><div class="nav-item" data-section="identity"><i class="fas fa-id-card"></i> Identity</div></li>
+                    <li><div class="nav-item" data-section="education"><i class="fas fa-graduation-cap"></i> Education</div></li>
+                    <li><div class="nav-item" data-section="status"><i class="fas fa-broadcast-tower"></i> Status</div></li>
+                    <li><div class="nav-item" data-section="gaming"><i class="fas fa-gamepad"></i> Gaming</div></li>
+                    <li><div class="nav-item" data-section="anime"><i class="fas fa-tv"></i> Anime</div></li>
+                    <li><div class="nav-item" data-section="mission"><i class="fas fa-flag"></i> Mission</div></li>
+                    <li><div class="nav-item" data-section="interests"><i class="fas fa-star"></i> Interests</div></li>
+                </ul>
+            </nav>
+            <div class="about-window">
+                <div class="window-header">
+                    <div class="header-left">
+                        <div class="window-controls">
+                            <button class="control close" title="Close">×</button>
+                            <button class="control minimize" title="Customize Cursor" id="cursorCustomizer">_</button>
+                            <button class="control maximize" title="Maximize">□</button>
+                        </div>
+                        <span class="window-title">ABOUT_ME.txt</span>
+                    </div>
+                    <div class="header-right">
+                        <div class="status-indicator">
+                            <span class="status-dot"></span>
+                            <span class="status-text">ONLINE</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="window-content">
+                    <div class="profile-section">
+                        <div class="profile-image">
+                            <img src="assets/images/profile.jpg" alt="Profile" class="glitch-image">
+                            <div class="glitch-effect"></div>
+                        </div>
+                        <div class="profile-info">
+                            <h2 class="glitch-text">USER_PROFILE</h2>
+                            <div class="stats">
+                                <div class="stat-item">
+                                    <span class="label">NAME:</span>
+                                    <span class="value">Enzo Jobard</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="label">AGE:</span>
+                                    <span class="value">20</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="label">CLASS:</span>
+                                    <span class="value">Web_Wizard</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="label">SKILLS:</span>
+                                    <div class="skill-bars">
+                                        <div class="skill-bar">
+                                            <span class="skill-name">HTML</span>
+                                            <div class="bar">
+                                                <div class="progress" style="width: 90%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <span class="skill-name">CSS</span>
+                                            <div class="bar">
+                                                <div class="progress" style="width: 85%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <span class="skill-name">JS</span>
+                                            <div class="bar">
+                                                <div class="progress" style="width: 75%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-content">
+                        <h1>About Me</h1>
+                        <div class="about-text">
+                            <div class="text-section" id="identity">
+                                <h3 class="section-label">[IDENTITY]</h3>
+                                <p>Je m'appelle Enzo Jobard</p>
+                                <p>J'ai 20 ans</p>
+                            </div>
+
+                            <div class="text-section" id="education">
+                                <h3 class="section-label">[EDUCATION]</h3>
+                                <div class="diploma-list">
+                                    <div class="diploma">
+                                        <p>BTS SIO option SLAM (En cours - 1ère année)</p>
+                                        <p class="detail">// Développement d'applications et solutions digitales</p>
+                                        <p class="status">STATUS: IN_PROGRESS</p>
+                                    </div>
+                                    <div class="diploma">
+                                        <p>BAC SN ARED Option Euro - Mention Bien</p>
+                                        <p class="detail">// Systèmes Numériques, Audiovisuels, Réseau et Équipement Domestiques</p>
+                                        <p class="status">STATUS: COMPLETED</p>
+                                    </div>
+                                    <div class="diploma">
+                                        <p>BAFA</p>
+                                        <p class="detail">// Brevet d'Aptitude aux Fonctions d'Animateur</p>
+                                        <p class="status">STATUS: COMPLETED</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-section" id="status">
+                                <h3 class="section-label">[CURRENT_STATUS]</h3>
+                                <p>Content Creator & Streamer</p>
+                                <p class="detail">// Création de contenu digital et streaming en direct</p>
+                            </div>
+
+                            <div class="text-section" id="gaming">
+                                <h3 class="section-label">[GAMING_PREFERENCES]</h3>
+                                <div class="tag-container">
+                                    <a href="https://fr.wikipedia.org/wiki/Half-Life_(jeu_vid%C3%A9o)" target="_blank" rel="noopener noreferrer" class="tag">Half-Life</a>
+                                    <a href="https://fr.wikipedia.org/wiki/Portal_(jeu_vid%C3%A9o)" target="_blank" rel="noopener noreferrer" class="tag">Portal</a>
+                                    <a href="https://fr.wikipedia.org/wiki/Garry%27s_Mod" target="_blank" rel="noopener noreferrer" class="tag">Garry's Mod</a>
+                                    <a href="https://fr.wikipedia.org/wiki/Counter-Strike:_Global_Offensive" target="_blank" rel="noopener noreferrer" class="tag">CS:GO</a>
+                                    <a href="https://fr.wikipedia.org/wiki/Minecraft" target="_blank" rel="noopener noreferrer" class="tag">Minecraft</a>
+                                </div>
+                            </div>
+
+                            <div class="text-section" id="anime">
+                                <h3 class="section-label">[ANIME_DATABASE]</h3>
+                                <div class="tag-container">
+                                    <a href="https://fr.wikipedia.org/wiki/Mushoku_Tensei" target="_blank" rel="noopener noreferrer" class="tag">Mushoku Tensei</a>
+                                    <a href="https://fr.wikipedia.org/wiki/Chainsaw_Man" target="_blank" rel="noopener noreferrer" class="tag">Chainsaw Man</a>
+                                    <a href="https://fr.wikipedia.org/wiki/Moi,_quand_je_me_r%C3%A9incarne_en_Slime" target="_blank" rel="noopener noreferrer" class="tag">Tensura</a>
+                                    <a href="https://fr.wikipedia.org/wiki/Solo_Leveling" target="_blank" rel="noopener noreferrer" class="tag">Solo Leveling</a>
+                                    <a href="https://fr.wikipedia.org/wiki/To_Your_Eternity" target="_blank" rel="noopener noreferrer" class="tag">To Your Eternity</a>
+                                </div>
+                            </div>
+
+                            <div class="text-section" id="mission">
+                                <h3 class="section-label">[MISSION_STATEMENT]</h3>
+                                <p class="glitch-text">CREATING_COOL_STUFF.exe</p>
+                                <p class="detail">// Exploration créative du développement web</p>
+                            </div>
+
+                            <div class="interests" id="interests">
+                                <h3>INTERESTS:</h3>
+                                <div class="interest-grid">
+                                    <div class="interest-item">
+                                        <i class="fas fa-code"></i>
+                                        <span>Coding</span>
+                                    </div>
+                                    <div class="interest-item">
+                                        <i class="fas fa-gamepad"></i>
+                                        <span>Gaming</span>
+                                    </div>
+                                    <div class="interest-item">
+                                        <i class="fas fa-tv"></i>
+                                        <span>Anime/Manga</span>
+                                    </div>
+                                    <div class="interest-item">
+                                        <i class="fab fa-twitch"></i>
+                                        <span>Twitch</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="cursor-customizer-panel">
+        <h3>CURSOR_CUSTOMIZER.exe</h3>
+        <div class="cursor-options">
+            <div class="cursor-option">
+                <label>Size</label>
+                <input type="range" id="cursorSize" min="10" max="50" value="20">
+            </div>
+            <div class="cursor-option">
+                <label>Color</label>
+                <input type="color" id="cursorColor" value="#ff00ff">
+            </div>
+            <div class="cursor-option">
+                <label>Shape</label>
+                <select id="cursorShape">
+                    <option value="circle">Default</option>
+                    <option value="square">Crosshair</option>
+                    <option value="cross">Cell</option>
+                    <option value="diamond">Pointer</option>
+                    <option value="star">Wait</option>
+                    <option value="text">Text</option>
+                    <option value="move">Move</option>
+                    <option value="grab">Grab</option>
+                    <option value="help">Help</option>
+                </select>
+            </div>
+            <div class="cursor-option">
+                <label>Trail Effect</label>
+                <select id="cursorEffect">
+                    <option value="none">None</option>
+                    <option value="trail">Cyber Trail</option>
+                    <option value="glitch">Glitch</option>
+                    <option value="matrix">Matrix</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/cursor.js"></script>
+    <script src="assets/js/matrix.js"></script>
+    <script src="assets/js/glitch.js"></script>
+    <script src="assets/js/background3d.js"></script>
+</body>
+</html> 
