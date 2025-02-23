@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECTS.exe</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/projects.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="assets/js/hologram.js"></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <div class="noise-overlay"></div>
+    <div class="scanlines"></div>
+    <div class="grid-overlay"></div>
+    
+    <header class="header">
+        <nav class="nav">
+            <div class="logo glitch" data-text="WEBCORE_2024">WEBCORE_2024</div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME.exe</a></li>
+                <li><a href="projects.html" class="active">PROJECTS.exe</a></li>
+                <li><a href="about.html">ABOUT.txt</a></li>
+                <li><a href="contact.html">CONTACT.dll</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="projects-page">
+        <h1 class="section-title glitch-text" data-text="PROJECT_DATABASE">PROJECT_DATABASE</h1>
+        
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">ALL.sys</button>
+            <button class="filter-btn" data-filter="web">WEB.exe</button>
+            <button class="filter-btn" data-filter="app">APP.dll</button>
+            <button class="filter-btn" data-filter="game">GAME.iso</button>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/images/project1.jpg" alt="Portfolio">
+                    <div class="project-overlay">
+                        <h3>CYBERPUNK_PORTFOLIO.exe</h3>
+                        <p>Portfolio cyberpunk interactif avec effets visuels avancés, animations 3D et curseur personnalisable. Développé avec HTML5, CSS3 et JavaScript vanilla pour une expérience immersive et futuriste.</p>
+                        <div class="tech-stack">
+                            <i class="fab fa-html5" title="HTML5"></i>
+                            <i class="fab fa-css3-alt" title="CSS3"></i>
+                            <i class="fab fa-js" title="JavaScript"></i>
+                            <i class="fab fa-node-js" title="Node.js"></i>
+                        </div>
+                        <div class="project-features">
+                            <span class="feature"><i class="fas fa-cube"></i> Animations 3D</span>
+                            <span class="feature"><i class="fas fa-mouse-pointer"></i> Curseur Custom</span>
+                            <span class="feature"><i class="fas fa-terminal"></i> Style Terminal</span>
+                        </div>
+                        <a href="#" class="project-btn glitch-btn">EXPLORER <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projets vides -->
+            <div class="project-card blank">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <h3>BLANK_PROJECT_01.sys</h3>
+                        <p>[En développement...]</p>
+                        <div class="tech-stack">
+                            <i class="fas fa-lock" title="Locked"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card blank">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <h3>BLANK_PROJECT_02.sys</h3>
+                        <p>[En développement...]</p>
+                        <div class="tech-stack">
+                            <i class="fas fa-lock" title="Locked"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/disable-console.js"></script>
+    <script src="assets/js/cursor.js"></script>
+    <script src="assets/js/matrix.js"></script>
+    <script src="assets/js/glitch.js"></script>
+    <script src="assets/js/background3d.js"></script>
+    <script>
+        // Configuration des particules
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#00ff00' },
+                shape: { type: 'triangle' },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#00ff00',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+
+        // Filtrage des projets
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Retirer la classe active de tous les boutons
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+                document.querySelectorAll('.project-card').forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => card.style.opacity = '1', 10);
+                    } else {
+                        card.style.opacity = '0';
+                        setTimeout(() => card.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
