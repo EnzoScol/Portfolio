@@ -1,0 +1,339 @@
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.contact-page {
+    padding: 80px 2rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 30px var(--primary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle at center,
+        rgba(0, 255, 0, 0.1) 0%,
+        transparent 70%
+    );
+    animation: pulse-container 4s infinite;
+}
+
+@keyframes pulse-container {
+    0% { transform: scale(0.95); opacity: 0.5; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(0.95); opacity: 0.5; }
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.section-title::before,
+.section-title::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background-color);
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    animation: glitch-title 4s infinite linear alternate-reverse;
+}
+
+.section-title::after {
+    clip-path: polygon(0 45%, 100% 45%, 100% 100%, 0 100%);
+    animation: glitch-title 4s infinite linear alternate;
+}
+
+@keyframes glitch-title {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--secondary-color);
+    padding: 0.8rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.input-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 255, 0, 0.2),
+        transparent
+    );
+    animation: scan-input 3s infinite;
+}
+
+@keyframes scan-input {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+}
+
+.input-container:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 
+        0 0 15px rgba(0, 255, 0, 0.3),
+        0 0 30px rgba(0, 255, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.input-prefix {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.glitch-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+.glitch-input::placeholder {
+    color: rgba(0, 255, 0, 0.5);
+}
+
+textarea.glitch-input {
+    min-height: 120px;
+    resize: vertical;
+}
+
+select.glitch-input {
+    width: 100%;
+    cursor: pointer;
+    appearance: none;
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300ff00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") no-repeat right 1rem center;
+    background-size: 1em;
+}
+
+select.glitch-input option {
+    background: var(--window-bg);
+    color: var(--text-color);
+    padding: 0.5rem;
+}
+
+.btn-glitch {
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-glitch::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 255, 0, 0.4),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.btn-glitch:hover::before {
+    left: 100%;
+}
+
+.btn-glitch::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 255, 0, 0.1) 3px,
+        rgba(0, 255, 0, 0.1) 3px
+    );
+    animation: scanline 4s infinite linear;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.btn-glitch:hover::after {
+    opacity: 1;
+}
+
+.btn-glitch.sending {
+    animation: sendingPulse 1.5s infinite;
+}
+
+.btn-glitch.sent {
+    background: var(--primary-color);
+    color: black;
+}
+
+.social-links {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--primary-color);
+}
+
+.social-links h3 {
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--secondary-color);
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(0, 255, 0, 0.1),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: 0.5s;
+}
+
+.social-icon:hover::before {
+    transform: translateX(100%);
+}
+
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: var(--primary-color);
+    box-shadow: 
+        0 0 20px var(--primary-color),
+        0 0 40px rgba(0, 255, 0, 0.2);
+}
+
+.social-icon i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+@keyframes sendingPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+@keyframes scanline {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(50%) rotate(0deg); }
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .social-icons {
+        flex-direction: column;
+    }
+    
+    .social-icon {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+} 
